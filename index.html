@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Eduarda | Estudante & Desenvolvedora Front-End & UI/UX</title>
+  <meta name="description" content="Portfólio de Maria Eduarda: Estudante e Desenvolvedora Front-End apaixonada por transformar ideias em experiências digitais criativas, modernas e interativas.">
+  <meta name="keywords" content="Maria Eduarda, Portfólio, Front-End, Desenvolvedora, Estudante, UI/UX, Web Design, JavaScript, HTML5, CSS3">
+  <meta name="author" content="Maria Eduarda">
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maria Eduarda | Portfólio Front-End & Criativo">
+  <meta property="og:description" content="Transformando ideias em experiências digitais criativas. Conheça meus projetos, habilidades e trajetória.">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Color Scheme Meta para suporte nativo e prevenção de FOUC -->
+  <meta name="color-scheme" content="dark light">
+  <script>
+    // Prevenção imediata de FOUC de tema
+    (function() {
+      const savedTheme = localStorage.getItem('theme-preference') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.querySelector('meta[name="color-scheme"]').setAttribute('content', savedTheme === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
+
+  <!-- Google Fonts: Space Grotesk (Títulos) & Inter (Corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Elemento de Fundo Decorativo Dinâmico (Glow sutil) -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- ==================== 1. CABEÇALHO / NAVEGAÇÃO ==================== -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Ir para o topo da página">
+        <span class="logo-mark">ME</span>
+        <span class="logo-dot"></span>
+        <span class="logo-text">maria.eduarda</span>
+      </a>
+
+      <!-- Navegação Desktop -->
+      <nav class="nav-menu" id="navMenu" aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#sobre" class="nav-link">Sobre Mim</a></li>
+          <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações do Header (Tema + CTA + Botão Mobile) -->
+      <div class="header-actions">
+        <!-- Botão Alternador de Modo Claro/Escuro -->
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar entre modo escuro e modo claro" title="Alternar tema">
+          <span class="theme-icon icon-moon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+          <span class="theme-icon icon-sun" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-label sr-only">Alternar tema</span>
+        </button>
+
+        <a href="#contato" class="btn btn-outline btn-sm header-cta">Vamos Conversar?</a>
+
+        <!-- Botão Menu Mobile (Hamburger) -->
+        <button type="button" class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==================== 2. SEÇÃO HERO (ABERTURA) ==================== -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-container">
+        
+        <!-- Status Badge -->
+        <div class="hero-badge reveal" data-delay="100">
+          <span class="status-indicator">
+            <span class="status-pulse"></span>
+            <span class="status-dot"></span>
+          </span>
+          <span class="badge-text">Estudante & Desenvolvedora Front-End • Aberta a Oportunidades</span>
+        </div>
+
+        <!-- Título Principal com Tipografia em Grande Escala -->
+        <div class="hero-title-wrapper reveal" data-delay="200">
+          <h1 class="hero-title" id="hero-title">
+            <span class="title-line">MARIA</span>
+            <span class="title-line title-highlight">
+              EDUARDA<span class="accent-period">.</span>
+            </span>
+          </h1>
+        </div>
+
+        <!-- Frase de Impacto e Slogan -->
+        <div class="hero-statement reveal" data-delay="300">
+          <p class="hero-slogan">"Transformando ideias em experiências digitais criativas."</p>
+          <p class="hero-subtitle">
+            Combinando código limpo, design intuitivo e interfaces expressivas para construir a próxima geração da web.
+          </p>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="hero-actions reveal" data-delay="400">
+          <a href="#projetos" class="btn btn-primary">
+            <span>Explorar Projetos</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <a href="#sobre" class="btn btn-ghost">
+            <span>Conhecer Minha História</span>
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Destaques Rápidos da Hero (Pills Interativas) -->
+        <div class="hero-tags reveal" data-delay="500">
+          <div class="tag-item"><span>🚀</span> Front-End Moderno</div>
+          <div class="tag-item"><span>🎨</span> UI/UX & Criatividade</div>
+          <div class="tag-item"><span>✨</span> Micro-animações</div>
+          <div class="tag-item"><span>⚡</span> Foco em Performance</div>
+        </div>
+
+      </div>
+
+      <!-- Letreiro Dinâmico / Ticker (Estilo Emotion Agency) -->
+      <div class="ticker-wrapper" aria-hidden="true">
+        <div class="ticker-track">
+          <span class="ticker-item">HTML5 & CSS3 MODERNO</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">JAVASCRIPT INTERATIVO</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">UI/UX DESIGN EM FIGMA</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">EXPERIÊNCIAS DIGITAIS CRIATIVAS</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">DESIGN RESPONSIVO & ACESSÍVEL</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">HTML5 & CSS3 MODERNO</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">JAVASCRIPT INTERATIVO</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">UI/UX DESIGN EM FIGMA</span>
+          <span class="ticker-sep">✦</span>
+          <span class="ticker-item">EXPERIÊNCIAS DIGITAIS CRIATIVAS</span>
+          <span class="ticker-sep">✦</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== 3. SEÇÃO SOBRE MIM ==================== -->
+    <section class="about-section section-padding" id="sobre" aria-labelledby="about-title">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <div class="section-tag">[ 01 / QUEM SOU EU ]</div>
+          <h2 class="section-title" id="about-title">Design, Código & Criatividade</h2>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Coluna 1: Espaço para Foto de Perfil & Card Visual -->
+          <div class="about-card-col reveal" data-delay="150">
+            <div class="profile-card">
+              <div class="profile-frame">
+                <!-- Visual representativo artístico e moderno de Maria Eduarda -->
+                <div class="profile-avatar-visual" role="img" aria-label="Ilustração de perfil de Maria Eduarda">
+                  <div class="avatar-backdrop"></div>
+                  <!-- Arte vetorial estilizada representando a desenvolvedora -->
+                  <svg class="avatar-svg" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="160" cy="180" r="130" fill="var(--color-primary)" fill-opacity="0.12" />
+                    <circle cx="160" cy="140" r="62" fill="var(--color-card-border)" />
+                    <!-- Cabelo moderno e silhueta estilizada -->
+                    <path d="M102 150C98 100 130 75 160 75C200 75 224 102 218 152C216 168 206 182 206 182C206 182 196 172 192 165C170 178 140 176 128 165C124 172 114 182 114 182C114 182 104 168 102 150Z" fill="var(--color-text)" />
+                    <!-- Rosto -->
+                    <circle cx="160" cy="142" r="46" fill="var(--color-surface-hover)" />
+                    <!-- Olhos e Expressão amigável -->
+                    <path d="M144 140Q148 136 152 140" stroke="var(--color-text)" stroke-width="3" stroke-linecap="round" />
+                    <path d="M168 140Q172 136 176 140" stroke="var(--color-text)" stroke-width="3" stroke-linecap="round" />
+                    <path d="M152 158Q160 166 168 158" stroke="var(--color-primary)" stroke-width="3" stroke-linecap="round" />
+                    <!-- Óculos Modernos / Geek chic -->
+                    <rect x="135" y="132" width="22" height="16" rx="5" stroke="var(--color-primary)" stroke-width="2.5" fill="none" />
+                    <rect x="163" y="132" width="22" height="16" rx="5" stroke="var(--color-primary)" stroke-width="2.5" fill="none" />
+                    <line x1="157" y1="140" x2="163" y2="140" stroke="var(--color-primary)" stroke-width="2.5" />
+                    <!-- Ombros & Casaco com detalhes neon -->
+                    <path d="M90 295C90 235 125 215 160 215C195 215 230 235 230 295" fill="var(--color-card-bg)" stroke="var(--color-primary)" stroke-width="2" />
+                    <path d="M135 218L145 285L160 295L175 285L185 218" fill="var(--color-primary)" fill-opacity="0.2" />
+                    <!-- Detalhes de código flutuante -->
+                    <g opacity="0.6">
+                      <rect x="25" y="60" width="70" height="28" rx="14" fill="var(--color-card-bg)" stroke="var(--color-card-border)" />
+                      <text x="35" y="78" font-family="'Space Grotesk', sans-serif" font-size="11" fill="var(--color-primary)">&lt;code/&gt;</text>
+                      <rect x="225" y="210" width="75" height="28" rx="14" fill="var(--color-card-bg)" stroke="var(--color-card-border)" />
+                      <text x="235" y="228" font-family="'Space Grotesk', sans-serif" font-size="11" fill="var(--color-primary)">{ui.ux}</text>
+                    </g>
+                  </svg>
+                  <div class="photo-overlay-badge">
+                    <span class="badge-role">Estudante & Dev</span>
+                  </div>
+                </div>
+
+                <!-- Info Box sobre disponibilidade -->
+                <div class="profile-details">
+                  <div class="profile-meta-row">
+                    <span class="meta-label">Nome:</span>
+                    <span class="meta-val">Maria Eduarda</span>
+                  </div>
+                  <div class="profile-meta-row">
+                    <span class="meta-label">Localização:</span>
+                    <span class="meta-val">Brasil 🇧🇷</span>
+                  </div>
+                  <div class="profile-meta-row">
+                    <span class="meta-label">Foco Atual:</span>
+                    <span class="meta-val highlight-val">Front-End & UI/UX</span>
+                  </div>
+                  <div class="profile-meta-row">
+                    <span class="meta-label">Status:</span>
+                    <span class="meta-val ready-val">Pronta para novos desafios</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cartão de Interação Rápida -->
+              <div class="profile-action-card">
+                <span class="action-card-text">Interessado em colaborar em um projeto criativo?</span>
+                <a href="#contato" class="btn btn-outline btn-xs">Dizer Olá 👋</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Bio Textual & Estatísticas -->
+          <div class="about-content-col reveal" data-delay="300">
+            <div class="bio-wrapper">
+              <h3 class="bio-heading">
+                Olá! Sou <span class="highlight-text">Maria Eduarda</span>, estudante apaixonada por criar interfaces que conectam tecnologia e pessoas.
+              </h3>
+              
+              <div class="bio-paragraphs">
+                <p>
+                  Minha jornada no desenvolvimento começou pela curiosidade de entender como as grandes ideias ganham vida nas telas. Como estudante de tecnologia, busco ir além da programação convencional: encaro cada linha de código como uma oportunidade de desenhar experiências envolventes, fluidas e acessíveis.
+                </p>
+                <p>
+                  Tenho um olhar apurado para <strong>design visual, tipografia e micro-interações</strong>, garantindo que cada projeto não apenas funcione perfeitamente, mas também transmita personalidade e clareza. Acredito que o bom código front-end deve ser elegante por dentro e surpreendente por fora.
+                </p>
+                <p>
+                  Estou constantemente aprendendo novas ferramentas, experimentando soluções no ecossistema web moderno e construindo projetos práticos para enriquecer meu repertório técnico e criativo.
+                </p>
+              </div>
+
+              <!-- Grid de Métricas / Destaques -->
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Dedicação & Vontade de Aprender</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">+12</div>
+                  <div class="stat-label">Projetos & Experimentos Desenvolvidos</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-number">24/7</div>
+                  <div class="stat-label">Curiosidade Criativa & Evolução</div>
+                </div>
+              </div>
+
+              <!-- Hobbies & Interesses Criativos -->
+              <div class="about-interests">
+                <h4 class="interests-title">O que me inspira além das telas:</h4>
+                <div class="interests-tags">
+                  <span class="interest-pill">🎧 Música & Lofi Beats</span>
+                  <span class="interest-pill">☕ Café Fresco</span>
+                  <span class="interest-pill">📐 Tipografia & Motion</span>
+                  <span class="interest-pill">📚 Livros de Tecnologia</span>
+                  <span class="interest-pill">🌱 Criatividade Colaborativa</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 4. SEÇÃO DE PROJETOS ==================== -->
+    <section class="projects-section section-padding" id="projetos" aria-labelledby="projects-title">
+      <div class="container">
+        
+        <div class="projects-header-wrapper reveal">
+          <div class="section-header">
+            <div class="section-tag">[ 02 / TRABALHOS EM DESTAQUE ]</div>
+            <h2 class="section-title" id="projects-title">Projetos & Criações</h2>
+          </div>
+          <p class="section-intro">
+            Uma seleção de aplicações web e interfaces interativas desenvolvidas com foco em usabilidade, estética marcante e código semântico.
+          </p>
+
+          <!-- Filtros de Projetos -->
+          <div class="project-filters" role="tablist" aria-label="Filtrar projetos por categoria">
+            <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos (4)</button>
+            <button type="button" class="filter-btn" data-filter="webapp" role="tab" aria-selected="false">Web Apps</button>
+            <button type="button" class="filter-btn" data-filter="uiux" role="tab" aria-selected="false">UI/UX & Design</button>
+            <button type="button" class="filter-btn" data-filter="creative" role="tab" aria-selected="false">Criativos</button>
+          </div>
+        </div>
+
+        <!-- Grid de Cards de Projetos (Estilo Huxley Saga: generoso, elegante e impactante) -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- PROJETO 1 -->
+          <article class="project-card reveal" data-category="creative" data-delay="100">
+            <div class="card-visual-wrapper">
+              <div class="card-browser-bar">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url">https://aurawave-audio.me.dev</div>
+              </div>
+              <div class="card-preview aura-preview">
+                <div class="preview-canvas-mockup">
+                  <div class="wave-bar" style="height: 45%;"></div>
+                  <div class="wave-bar" style="height: 80%;"></div>
+                  <div class="wave-bar" style="height: 60%;"></div>
+                  <div class="wave-bar" style="height: 95%;"></div>
+                  <div class="wave-bar" style="height: 70%;"></div>
+                  <div class="wave-bar" style="height: 50%;"></div>
+                  <div class="wave-bar" style="height: 90%;"></div>
+                  <div class="wave-bar" style="height: 65%;"></div>
+                </div>
+                <div class="preview-overlay">
+                  <span class="preview-tag">Canvas 2D • Web Audio API</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-number">01</span>
+                <span class="project-cat-badge">Experimento Criativo</span>
+                <span class="project-year">2024</span>
+              </div>
+              
+              <h3 class="project-name">AuraWave • Visualizador de Áudio</h3>
+              
+              <p class="project-desc">
+                Player e sintetizador de paisagens sonoras ambientais com visualização generativa de ondas sonoras em tempo real, suporte a frequências personalizadas e tema reativo.
+              </p>
+
+              <div class="project-tags">
+                <span class="tech-tag">HTML5 Canvas</span>
+                <span class="tech-tag">JavaScript ES6</span>
+                <span class="tech-tag">Web Audio API</span>
+                <span class="tech-tag">CSS Animations</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="#contato" class="btn btn-primary btn-sm project-btn" title="Ver demonstração interativa">
+                  <span>Ver Demonstração</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm project-btn" title="Acessar repositório no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>Código</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJETO 2 -->
+          <article class="project-card reveal" data-category="uiux" data-delay="200">
+            <div class="card-visual-wrapper">
+              <div class="card-browser-bar">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url">https://kroma-ui.me.dev</div>
+              </div>
+              <div class="card-preview kroma-preview">
+                <div class="kroma-ui-sample">
+                  <div class="sample-badge">Color System v2.0</div>
+                  <div class="sample-palette">
+                    <span class="palette-swatch swatch-lime"></span>
+                    <span class="palette-swatch swatch-dark"></span>
+                    <span class="palette-swatch swatch-beige"></span>
+                    <span class="palette-swatch swatch-accent"></span>
+                  </div>
+                  <div class="sample-btn-mock">
+                    <span class="mock-btn primary">Botão Ativo</span>
+                    <span class="mock-btn secondary">Outline</span>
+                  </div>
+                </div>
+                <div class="preview-overlay">
+                  <span class="preview-tag">Design System • Tokens</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-number">02</span>
+                <span class="project-cat-badge">UI/UX & Engenharia</span>
+                <span class="project-year">2024</span>
+              </div>
+              
+              <h3 class="project-name">Kroma • Design System Modular</h3>
+              
+              <p class="project-desc">
+                Sistema de design tokens, componentes acessíveis e guia de estilo completo documentado para projetos front-end consistentes, com suporte a temas dinâmicos.
+              </p>
+
+              <div class="project-tags">
+                <span class="tech-tag">CSS Custom Properties</span>
+                <span class="tech-tag">Figma Tokens</span>
+                <span class="tech-tag">Acessibilidade (a11y)</span>
+                <span class="tech-tag">Modular UI</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="#contato" class="btn btn-primary btn-sm project-btn" title="Ver documentação do design system">
+                  <span>Ver Demonstração</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm project-btn" title="Acessar repositório no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>Código</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJETO 3 -->
+          <article class="project-card reveal" data-category="webapp" data-delay="300">
+            <div class="card-visual-wrapper">
+              <div class="card-browser-bar">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url">https://habitpulse.me.dev</div>
+              </div>
+              <div class="card-preview habit-preview">
+                <div class="habit-ui-mockup">
+                  <div class="habit-header">
+                    <span class="habit-title">🎯 Hábitos Ativos</span>
+                    <span class="habit-streak">⚡ 14 dias seguidos</span>
+                  </div>
+                  <div class="habit-list">
+                    <div class="habit-row done">
+                      <span class="check-box">✓</span>
+                      <span class="habit-name">Praticar 1h de Front-End</span>
+                    </div>
+                    <div class="habit-row done">
+                      <span class="check-box">✓</span>
+                      <span class="habit-name">Ler documentação web</span>
+                    </div>
+                    <div class="habit-row">
+                      <span class="check-box"></span>
+                      <span class="habit-name">Prototipar nova tela</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-overlay">
+                  <span class="preview-tag">SPA • LocalStorage</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-number">03</span>
+                <span class="project-cat-badge">Web Application</span>
+                <span class="project-year">2024</span>
+              </div>
+              
+              <h3 class="project-name">HabitPulse • Rastreador Produtivo</h3>
+              
+              <p class="project-desc">
+                Aplicação focada em produtividade e constância de estudos, com persistência local de dados, estatísticas visuais, categorização por tags e modo zen.
+              </p>
+
+              <div class="project-tags">
+                <span class="tech-tag">JavaScript Moderno</span>
+                <span class="tech-tag">LocalStorage</span>
+                <span class="tech-tag">CSS Flex/Grid</span>
+                <span class="tech-tag">Mobile First</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="#contato" class="btn btn-primary btn-sm project-btn" title="Testar o aplicativo web">
+                  <span>Ver Demonstração</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm project-btn" title="Acessar repositório no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>Código</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJETO 4 -->
+          <article class="project-card reveal" data-category="creative" data-delay="400">
+            <div class="card-visual-wrapper">
+              <div class="card-browser-bar">
+                <div class="browser-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="browser-url">https://neovibe-studio.me.dev</div>
+              </div>
+              <div class="card-preview studio-preview">
+                <div class="studio-typo-mock">
+                  <span class="mock-kinetic-1">CRIATIVO</span>
+                  <span class="mock-kinetic-2">DIGITAL</span>
+                  <div class="mock-circle-spin"></div>
+                </div>
+                <div class="preview-overlay">
+                  <span class="preview-tag">Kinetic Web • Micro-Interactions</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-number">04</span>
+                <span class="project-cat-badge">Editorial & Motion</span>
+                <span class="project-year">2023</span>
+              </div>
+              
+              <h3 class="project-name">NeoVibe • Landing Page Editorial</h3>
+              
+              <p class="project-desc">
+                Conceito de website para estúdio de design digital explorando tipografia em escala cinematográfica, animações de scroll reveal e contraste expressivo.
+              </p>
+
+              <div class="project-tags">
+                <span class="tech-tag">HTML Semântico</span>
+                <span class="tech-tag">CSS Keyframes</span>
+                <span class="tech-tag">Motion UX</span>
+                <span class="tech-tag">Responsividade</span>
+              </div>
+
+              <div class="project-actions">
+                <a href="#contato" class="btn btn-primary btn-sm project-btn" title="Explorar a landing page">
+                  <span>Ver Demonstração</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm project-btn" title="Acessar repositório no GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <span>Código</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 5. SEÇÃO DE HABILIDADES & VALORES ==================== -->
+    <section class="skills-section section-padding" id="habilidades" aria-labelledby="skills-title">
+      <div class="container">
+        
+        <div class="section-header reveal">
+          <div class="section-tag">[ 03 / CONHECIMENTOS & FERRAMENTAS ]</div>
+          <h2 class="section-title" id="skills-title">Meu Arsenal Criativo & Técnico</h2>
+        </div>
+
+        <div class="skills-categories-grid">
+          
+          <!-- Categoria 1: Front-End Core -->
+          <div class="skill-category-card reveal" data-delay="100">
+            <div class="skill-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="skill-category-title">Front-End Development</h3>
+            <p class="skill-category-desc">Estruturação semântica, estilos modernos e comportamento dinâmico e fluido.</p>
+            <ul class="skill-list">
+              <li><span class="skill-dot"></span><strong>HTML5 Semântico</strong> (Acessibilidade & SEO)</li>
+              <li><span class="skill-dot"></span><strong>CSS3 Moderno</strong> (Flexbox, Grid, CSS Variables)</li>
+              <li><span class="skill-dot"></span><strong>JavaScript (ES6+)</strong> (Manipulação DOM, Fetch API, Async)</li>
+              <li><span class="skill-dot"></span><strong>Responsividade Fluida</strong> (Mobile-First, Clamp)</li>
+              <li><span class="skill-dot"></span><strong>Git & GitHub</strong> (Versionamento e deploy colaborativo)</li>
+            </ul>
+          </div>
+
+          <!-- Categoria 2: UI/UX & Design -->
+          <div class="skill-category-card reveal" data-delay="200">
+            <div class="skill-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                <path d="M2 2l7.586 7.586"></path>
+                <circle cx="11" cy="11" r="2"></circle>
+              </svg>
+            </div>
+            <h3 class="skill-category-title">UI/UX & Prototipagem</h3>
+            <p class="skill-category-desc">Criação de interfaces elegantes, pensadas no ser humano e no conforto de uso.</p>
+            <ul class="skill-list">
+              <li><span class="skill-dot"></span><strong>Figma</strong> (Wireframing, Auto Layout & Protótipos)</li>
+              <li><span class="skill-dot"></span><strong>Design Systems</strong> (Tokens, Componentes e Consistência)</li>
+              <li><span class="skill-dot"></span><strong>Tipografia & Hierarquia Visual</strong> (Escala e ritmo)</li>
+              <li><span class="skill-dot"></span><strong>Teoria das Cores & Contraste</strong> (WCAG AA/AAA)</li>
+              <li><span class="skill-dot"></span><strong>Arquitetura de Informação</strong> (Fluxos e Usabilidade)</li>
+            </ul>
+          </div>
+
+          <!-- Categoria 3: Diferenciais & Soft Skills -->
+          <div class="skill-category-card reveal" data-delay="300">
+            <div class="skill-card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 6 12 12 16 14"></polygon>
+              </svg>
+            </div>
+            <h3 class="skill-category-title">Método & Diferenciais</h3>
+            <p class="skill-category-desc">Postura de estudante focada em constante aprimoramento e resolução de problemas.</p>
+            <ul class="skill-list">
+              <li><span class="skill-dot"></span><strong>Atenção aos Detalhes</strong> (Pixel-perfect & Micro-interações)</li>
+              <li><span class="skill-dot"></span><strong>Comunicação Transparente</strong> (Trabalho em equipe)</li>
+              <li><span class="skill-dot"></span><strong>Pensamento Crítico</strong> (Foco no usuário final)</li>
+              <li><span class="skill-dot"></span><strong>Aprendizado Acelerado</strong> (Adaptação rápida a tecnologias)</li>
+              <li><span class="skill-dot"></span><strong>Organização de Código</strong> (Clean code e boas práticas)</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== 6. SEÇÃO DE CONTATO ==================== -->
+    <section class="contact-section section-padding" id="contato" aria-labelledby="contact-title">
+      <div class="container">
+        
+        <div class="contact-card-wrapper reveal">
+          <div class="contact-layout">
+            
+            <!-- Coluna de Informações e Chamada -->
+            <div class="contact-info-col">
+              <div class="section-tag">[ 04 / CONEXÃO & OPORTUNIDADES ]</div>
+              <h2 class="contact-headline" id="contact-title">
+                Vamos construir algo <span class="highlight-text">memorável</span> juntos?
+              </h2>
+              <p class="contact-subtext">
+                Estou disponível para estágios, projetos freelance, colaborações criativas ou apenas uma boa conversa sobre front-end e design.
+              </p>
+
+              <!-- Canais Diretos -->
+              <div class="direct-channels">
+                <a href="mailto:mariaeduarda.dev@exemplo.com" class="channel-item">
+                  <span class="channel-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </span>
+                  <div class="channel-texts">
+                    <span class="channel-label">E-mail Direto</span>
+                    <span class="channel-value">mariaeduarda.dev@exemplo.com</span>
+                  </div>
+                </a>
+
+                <div class="channel-item">
+                  <span class="channel-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                  </span>
+                  <div class="channel-texts">
+                    <span class="channel-label">Tempo de Resposta</span>
+                    <span class="channel-value">Geralmente em menos de 24h</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Links Sociais com Feedback Tátil -->
+              <div class="social-links-wrapper">
+                <span class="social-title">Me encontre nas redes:</span>
+                <div class="social-pills">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub de Maria Eduarda">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn de Maria Eduarda">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span>LinkedIn</span>
+                  </a>
+                  <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="social-pill" title="Behance de Maria Eduarda">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.726 3-3.468 0-5.5-2.646-5.5-6.004 0-3.349 2.053-5.996 5.485-5.996 3.42 0 5.015 2.735 5.015 5.996 0 .428-.052.884-.078 1.004h-7.904c.074 1.911 1.488 2.825 3.125 2.825 1.341 0 2.213-.676 2.583-1.825h2.005zm-7.697-3.998h5.365c-.073-1.602-1.077-2.613-2.673-2.613-1.637 0-2.586 1.011-2.692 2.613zm-11.029 4.998h-5v-12h5.5c2.518 0 4.5 1.312 4.5 3.5 0 1.315-.658 2.274-1.677 2.862 1.442.593 2.177 1.838 2.177 3.388 0 2.25-1.982 3.25-4.5 3.25zm-2.5-7.5h2.5c1.171 0 2-.629 2-1.75s-.829-1.75-2-1.75h-2.5v3.5zm0 5h2.8c1.381 0 2.2-.693 2.2-2s-.819-2-2.2-2h-2.8v4z"/></svg>
+                    <span>Behance</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coluna do Formulário Funcional e Intuitivo -->
+            <div class="contact-form-col">
+              <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-title">Envie uma Mensagem</div>
+
+                <!-- Campo Nome -->
+                <div class="form-group" id="groupName">
+                  <label for="userName" class="form-label">Seu Nome <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <input type="text" id="userName" name="name" class="form-input" placeholder="Ex: Ana Silva" required autocomplete="name">
+                    <span class="input-icon">👤</span>
+                  </div>
+                  <span class="error-msg" id="nameError">Por favor, informe seu nome (mínimo de 3 caracteres).</span>
+                </div>
+
+                <!-- Campo E-mail -->
+                <div class="form-group" id="groupEmail">
+                  <label for="userEmail" class="form-label">Seu E-mail <span class="required">*</span></label>
+                  <div class="input-wrapper">
+                    <input type="email" id="userEmail" name="email" class="form-input" placeholder="seuemail@exemplo.com" required autocomplete="email">
+                    <span class="input-icon">✉️</span>
+                  </div>
+                  <span class="error-msg" id="emailError">Por favor, insira um e-mail válido.</span>
+                </div>
+
+                <!-- Campo Mensagem -->
+                <div class="form-group" id="groupMessage">
+                  <div class="label-with-counter">
+                    <label for="userMessage" class="form-label">Sua Mensagem <span class="required">*</span></label>
+                    <span class="char-counter" id="charCounter">0 / 500</span>
+                  </div>
+                  <textarea id="userMessage" name="message" class="form-textarea" rows="4" maxlength="500" placeholder="Conte sobre sua ideia, projeto ou oportunidade..." required></textarea>
+                  <span class="error-msg" id="messageError">Escreva uma mensagem com pelo menos 10 caracteres.</span>
+                </div>
+
+                <!-- Botão de Envio com Estado de Loading -->
+                <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                  <span class="btn-text">Enviar Mensagem</span>
+                  <span class="btn-spinner" aria-hidden="true"></span>
+                  <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+                <!-- Feedback Toast / Alerta de Sucesso -->
+                <div class="form-feedback" id="formFeedback" role="alert" aria-live="polite">
+                  <div class="feedback-icon">🎉</div>
+                  <div class="feedback-content">
+                    <strong class="feedback-title">Mensagem enviada com sucesso!</strong>
+                    <p class="feedback-text">Muito obrigada pelo contato! Responderei o mais rápido possível.</p>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 7. RODAPÉ ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="brand-logo footer-logo">
+          <span class="logo-mark">ME</span>
+          <span class="logo-text">maria.eduarda</span>
+        </a>
+        <p class="footer-copy">
+          Construído com HTML5 semântico, CSS moderno e paixão por experiências visuais.
+        </p>
+      </div>
+
+      <div class="footer-center">
+        <p class="footer-signature">
+          Desenvolvido por <strong>Maria Eduarda</strong> © <span id="currentYear">2024</span>
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" id="backToTopBtn" aria-label="Voltar ao início da página" title="Voltar ao topo">
+          <span>Topo</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
